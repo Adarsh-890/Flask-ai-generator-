@@ -1,31 +1,32 @@
-/* Basic Styling */
+/* ======= Futuristic AI Website Styles ======= */
 body {
+    background: linear-gradient(45deg, #0f0c29, #302b63, #24243e); /* Dark Gradient */
+    color: #ffffff; /* White text */
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
     text-align: center;
     margin: 0;
     padding: 0;
 }
 
-/* Navigation Bar */
+/* ======= Navigation Bar ======= */
 nav {
-    background-color: #007BFF;
+    background: rgba(0, 0, 0, 0.8); /* Transparent Black */
     padding: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    backdrop-filter: blur(10px); /* Glassmorphism Effect */
 }
 
 nav h1 {
-    color: white;
+    color: #00d9ff; /* Neon Blue */
     margin: 0;
-    font-size: 24px;
+    text-transform: uppercase;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
-    margin: 0;
 }
 
 nav ul li {
@@ -34,70 +35,59 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: #ffffff;
     text-decoration: none;
     font-weight: bold;
-    font-size: 18px;
-    transition: 0.3s;
+    transition: color 0.3s;
 }
 
 nav ul li a:hover {
-    color: #ffcc00;
+    color: #00d9ff; /* Neon Blue Hover */
 }
 
-/* Main Content */
+/* ======= Main Section ======= */
 main {
     margin-top: 50px;
     padding: 20px;
 }
 
-/* Button Styling */
+h2 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #ff8c00, #ff0080);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Gradient Text */
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* ======= AI Button ======= */
 button {
-    background-color: #28a745;
+    background: linear-gradient(45deg, #ff00ff, #ff6600); /* Gradient Button */
     color: white;
     border: none;
-    padding: 12px 25px;
+    padding: 15px 30px;
     cursor: pointer;
     font-size: 18px;
-    border-radius: 5px;
+    border-radius: 10px;
     transition: 0.3s;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 10px rgba(255, 0, 255, 0.5);
 }
 
 button:hover {
-    background-color: #218838;
-    transform: scale(1.05);
+    background: linear-gradient(45deg, #ff6600, #ff00ff);
+    transform: scale(1.1);
 }
 
-/* Footer */
+/* ======= Footer ======= */
 footer {
-    background-color: #343a40;
+    background-color: rgba(0, 0, 0, 0.9);
     color: white;
     padding: 15px;
     position: fixed;
     bottom: 0;
     width: 100%;
-    font-size: 14px;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    nav ul {
-        padding-top: 10px;
-    }
-    
-    nav ul li {
-        display: block;
-        margin: 10px 0;
-    }
-
-    button {
-        width: 80%;
-        font-size: 16px;
-    }
 }
