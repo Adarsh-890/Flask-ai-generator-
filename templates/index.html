@@ -1,35 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Futuristic AI Website</title>
+     <html lang="en">
+     <head>
+         <meta charset="UTF-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <title>AI Generator</title>
+         <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+     </head>
+     <body class="bg-gray-100 p-4">
+         <div class="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-lg">
+             <h1 class="text-2xl font-bold mb-4">AI Prompt Generator</h1>
+             <textarea id="prompt" class="w-full p-2 border rounded-lg" placeholder="Enter your prompt"></textarea>
+             <button id="generate-btn" class="mt-2 bg-blue-500 text-white p-2 rounded-lg w-full">
+                 Generate
+             </button>
+             <div id="loading" class="hidden mt-4 text-center">
+                 <div class="spinner">Loading...</div>
+             </div>
+             <div id="response" class="mt-4"></div>
+         </div>
 
-    <!-- CSS File Link -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-    <header>
-        <nav>
-            <h1>🚀 AI Tech Future</h1>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <main>
-        <section>
-            <h2>Welcome to the Future of AI</h2>
-            <p>Experience the next-gen AI-powered web platform.</p>
-            <button id="aiButton">Try AI Magic</button>
-        </section>
-    </main>
+         <script>
+             document.getElementById('generate-btn').addEventListener('click', async () => {
+                 const prompt = document.getElementById('prompt').value;
+                 const responseDiv = document.getElementById('response');
+                 const loadingDiv = document.getElementById('loading');
 
-    <footer>
-        <p>© 2025 AI Tech. All rights reserved.</p>
-    </footer>
-</body>
-</html>
+                 responseDiv.innerHTML = '';
+                 loadingDiv.classList.remove('hidden');
+
+                 try {
+                     const res = await fetch('/generate', {
+                         method: 'POST',
+                         headers: { 'Content-Type': 'application/json' },
+                         body: JSON.stringify({ prompt })
+                     });
+                     const data = await res.json();
+                     responseDiv.innerHTML = `<p class="text-gray-700">${data.text}</p>`;
+                 } catch (error) {
+                     responseDiv.innerHTML = `<p class="text-red-500">Something went wrong. Please try again.</p>`;
+                 } finally {
+                     loadingDiv.classList.add('hidden');
+                 }
+             });
+         </script>
+     </body>
+     </html>
+
