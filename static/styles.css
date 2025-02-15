@@ -1,115 +1,108 @@
-/* General Styles */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #111;
-    color: #fff;
-    text-align: center;
+/* Futuristic Styles */
+* {
     margin: 0;
     padding: 0;
-    transition: background 0.5s ease, color 0.5s ease;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+body {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    padding: 20px;
 }
 
 /* Navigation Bar */
 nav {
-    background: linear-gradient(90deg, #ff00ff, #007BFF);
-    padding: 15px;
+    width: 100%;
+    max-width: 1200px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-radius: 10px;
+    margin-bottom: 30px;
 }
 
 nav h1 {
-    color: white;
+    font-size: 22px;
 }
 
 nav ul {
     list-style: none;
-    padding: 0;
     display: flex;
+    gap: 20px;
 }
 
 nav ul li {
-    margin: 0 15px;
+    display: inline;
 }
 
-nav ul li a, #themeToggle {
-    color: white;
+nav ul li a {
     text-decoration: none;
-    font-weight: bold;
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
-/* Hero Section */
-.hero {
-    margin-top: 50px;
-    padding: 50px;
-    background: linear-gradient(180deg, #111, #333);
-    border-radius: 10px;
-}
-
-.hero h2 {
-    font-size: 2.5rem;
-    text-shadow: 0 0 10px #ff00ff;
-}
-
-.hero button {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 16px;
+    padding: 8px 15px;
     border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
     transition: 0.3s;
 }
 
-.hero button:hover {
-    background-color: #218838;
+nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.4);
 }
 
-/* Features Section */
-.features {
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-}
-
-.feature {
-    margin: 20px;
-    padding: 20px;
+/* Main Content */
+main {
+    width: 100%;
+    max-width: 800px;
+    padding: 40px;
     background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    width: 250px;
-    transition: transform 0.3s ease;
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
 }
 
-.feature:hover {
-    transform: scale(1.1);
+h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
 }
 
-.feature i {
-    font-size: 3rem;
-    color: #ff00ff;
+p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Futuristic Button */
+button {
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    border: none;
+    padding: 12px 20px;
+    font-size: 18px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 15px;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #0072ff, #00c6ff);
 }
 
 /* Footer */
 footer {
-    background-color: #222;
-    color: white;
-    padding: 15px;
-    position: fixed;
-    bottom: 0;
     width: 100%;
-}
-
-/* Dark Mode */
-.dark-mode {
-    background-color: white;
-    color: black;
-}
-
-.dark-mode nav {
-    background: linear-gradient(90deg, #007BFF, #ff00ff);
+    text-align: center;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
 }
