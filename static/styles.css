@@ -1,93 +1,115 @@
-/* ======= Futuristic AI Website Styles ======= */
+/* General Styles */
 body {
-    background: linear-gradient(45deg, #0f0c29, #302b63, #24243e); /* Dark Gradient */
-    color: #ffffff; /* White text */
     font-family: 'Arial', sans-serif;
+    background-color: #111;
+    color: #fff;
     text-align: center;
     margin: 0;
     padding: 0;
+    transition: background 0.5s ease, color 0.5s ease;
 }
 
-/* ======= Navigation Bar ======= */
+/* Navigation Bar */
 nav {
-    background: rgba(0, 0, 0, 0.8); /* Transparent Black */
+    background: linear-gradient(90deg, #ff00ff, #007BFF);
     padding: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    backdrop-filter: blur(10px); /* Glassmorphism Effect */
 }
 
 nav h1 {
-    color: #00d9ff; /* Neon Blue */
-    margin: 0;
-    text-transform: uppercase;
+    color: white;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
+    display: flex;
 }
 
 nav ul li {
-    display: inline;
     margin: 0 15px;
 }
 
-nav ul li a {
-    color: #ffffff;
+nav ul li a, #themeToggle {
+    color: white;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
-nav ul li a:hover {
-    color: #00d9ff; /* Neon Blue Hover */
-}
-
-/* ======= Main Section ======= */
-main {
+/* Hero Section */
+.hero {
     margin-top: 50px;
-    padding: 20px;
+    padding: 50px;
+    background: linear-gradient(180deg, #111, #333);
+    border-radius: 10px;
 }
 
-h2 {
+.hero h2 {
     font-size: 2.5rem;
-    text-transform: uppercase;
-    background: linear-gradient(45deg, #ff8c00, #ff0080);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; /* Gradient Text */
+    text-shadow: 0 0 10px #ff00ff;
 }
 
-p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-}
-
-/* ======= AI Button ======= */
-button {
-    background: linear-gradient(45deg, #ff00ff, #ff6600); /* Gradient Button */
+.hero button {
+    background-color: #28a745;
     color: white;
     border: none;
-    padding: 15px 30px;
+    padding: 10px 20px;
     cursor: pointer;
-    font-size: 18px;
-    border-radius: 10px;
+    font-size: 16px;
+    border-radius: 5px;
     transition: 0.3s;
-    box-shadow: 0px 0px 10px rgba(255, 0, 255, 0.5);
 }
 
-button:hover {
-    background: linear-gradient(45deg, #ff6600, #ff00ff);
+.hero button:hover {
+    background-color: #218838;
+}
+
+/* Features Section */
+.features {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.feature {
+    margin: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    width: 250px;
+    transition: transform 0.3s ease;
+}
+
+.feature:hover {
     transform: scale(1.1);
 }
 
-/* ======= Footer ======= */
+.feature i {
+    font-size: 3rem;
+    color: #ff00ff;
+}
+
+/* Footer */
 footer {
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: #222;
     color: white;
     padding: 15px;
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background-color: white;
+    color: black;
+}
+
+.dark-mode nav {
+    background: linear-gradient(90deg, #007BFF, #ff00ff);
 }
