@@ -10,6 +10,9 @@
 
     <!-- JavaScript File Link -->
     <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+
+    <!-- FontAwesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
@@ -19,15 +22,33 @@
                 <li><a href="/">Home</a></li>
                 <li><a href="/about">About</a></li>
                 <li><a href="/contact">Contact</a></li>
+                <li><button id="themeToggle">🌙 Dark Mode</button></li>
             </ul>
         </nav>
     </header>
     
     <main>
-        <section>
+        <section class="hero">
             <h2>Welcome to the Future of AI</h2>
             <p>Experience the next-gen AI-powered web platform.</p>
             <button id="aiButton">Try AI Magic</button>
+        </section>
+        <section class="features">
+            <div class="feature">
+                <i class="fas fa-robot"></i>
+                <h3>AI Automation</h3>
+                <p>Leverage AI to automate your workflows and enhance productivity.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-brain"></i>
+                <h3>Deep Learning</h3>
+                <p>Cutting-edge AI models to analyze and predict data with precision.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-vr-cardboard"></i>
+                <h3>3D Interactive UI</h3>
+                <p>Experience futuristic UI with immersive 3D elements.</p>
+            </div>
         </section>
     </main>
 
