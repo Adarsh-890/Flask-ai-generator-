@@ -1,10 +1,10 @@
-from flask import Flask, render_template  
+from flask import Flask, render_template
 
-application = Flask(__name__)
+app = Flask(__name__, static_folder='static', template_folder='templates')
 
-@application.route('/')
+@app.route('/')
 def home():
-    return render_template('index.html')  # Ensure index.html exists
+    return render_template('index.html')
 
 if __name__ == '__main__':
-    application.run(host='0.0.0.0', port=5000)
+    app.run(debug=True)
